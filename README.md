@@ -4,6 +4,7 @@
 
 # Table of Contents
 1. [Introduction](#introduction)
+2. [Create Database](#create-database)
 
 # <a name="introduction"></a>Introduction
 
@@ -66,3 +67,8 @@
     UNIQUE(username)
   );
   ```
+
+# <a name="create-database"></a>Create Database
+```
+CREATE DATABASE petshop;
+```
