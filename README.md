@@ -5,6 +5,7 @@
 # Table of Contents
 1. [Introduction](#introduction)
 2. [Create Database](#create-database)
+2. [Create Table](#create-table)
 
 # <a name="introduction"></a>Introduction
 
@@ -32,6 +33,8 @@
     * **Timestampz:** date and time of day values with the time zone
 
 ## PostgreSQL Constraints
+* Constraints are a special rule that we can apply to a column that allows postgres to check if a value is valid before we insert or update it e.g. NOT NULL
+
 * Types of constraints include:
   * **PRIMARY KEY:** uniquely identifies a row in a column or group of columns
   * **FOREIGN KEY:** specifies that value in a col or group of cols must match value in row of another table (its PRIMARY KEY)
@@ -69,6 +72,28 @@
   ```
 
 # <a name="create-database"></a>Create Database
-```
-CREATE DATABASE petshop;
-```
+* Syntax:
+  ```
+  CREATE DATABASE database_name;
+  ```
+
+* Example:
+  ```
+  CREATE DATABASE petshop;
+  ```
+
+# <a name="create-table"></a>Create Table
+* Syntax:
+  ```
+  CREATE TABLE table_name(column_name datatype CONSTRAINT);
+  ```
+
+* Example:
+  ```
+  CREATE TABLE dogs(
+    dog_id serial PRIMARY KEY,
+    name varchar(255) NOT NULL,
+    age integer NOT NULL,
+    weight integer NOT NULL
+  );
+  ```
