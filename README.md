@@ -4,9 +4,10 @@
 
 # Table of Contents
 1. [Introduction](#introduction)
-2. [Create Database](#create-database)
-3. [Create Table](#create-table)
-4. [Basic Commands](#basic-commands)
+2. [Basic Commands](#basic-commands)
+3. [Create Database](#create-database)
+4. [Create Table](#create-table)
+6. [Insert](#insert)
 
 # <a name="introduction"></a>Introduction
 
@@ -72,6 +73,57 @@
   );
   ```
 
+# <a name="basic-commands"></a>Basic Commands
+* To quit the psql:
+  ```
+  \q
+  ```
+  
+* List all databases in the PostgreSQL database server:
+  ```
+  \l
+  ```
+  
+* List all schemas:
+  ```
+  \dn
+  ```
+
+* List all stored procedures and functions:
+  ```
+  \df
+  ```
+
+* List all views:
+  ```
+  \dv
+  ```
+
+* Lists all tables in a current database:
+  ```
+  \dt
+  ```
+
+  Or to get more information on tables in the current database:
+  ```
+  \dt+
+  ```
+
+  Get detailed information on a table:
+  ```
+  \d+ table_name
+  ```
+
+* Show a stored procedure or function code:
+  ```
+  \df+ function_name
+  ```
+
+* Show query output in the pretty-format:
+  ```
+  \x
+  ```
+
 # <a name="create-database"></a>Create Database
 * Syntax:
   ```
@@ -98,63 +150,20 @@
     weight integer NOT NULL
   );
   ```
-  
-  
-  
-  # <a name="basic-commands"></a>Basic Commands
 
-
-* To quit the psql::
+# <a name="insert"></a>Insert
+* Syntax:
   ```
-  \q
+  INSEERT INTO table_name(column_one,column_two)VALUES('value_one','value_two');
   ```
-  
-* List all databases in the PostgreSQL database server
+
+* Example:
   ```
-  \l
+  INSERT INTO dogs(
+    name,
+    age,
+    weight
+  )VALUES('Rover', 3, 35);
   ```
-  
-* List all schemas:
 
-```
-\dn
-```
-
-* List all stored procedures and functions:
-
-```
-\df
-```
-
-* List all views:
-
-```
-\dv
-```
-
-* Lists all tables in a current database.
-
-```
-\dt
-```
-
-Or to get more information on tables in the current database:
-```
-\dt+
-```
-
-Get detailed information on a table.
-
-```
-\d+ table_name
-```
-
-* Show a stored procedure or function code:
-```
-\df+ function_name
-```
-
-Show query output in the pretty-format:
-```
-\x
-```
+___**NB: use single quotes or postgres will throw an error**___
