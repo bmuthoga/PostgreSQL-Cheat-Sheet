@@ -5,7 +5,8 @@
 # Table of Contents
 1. [Introduction](#introduction)
 2. [Create Database](#create-database)
-2. [Create Table](#create-table)
+3. [Create Table](#create-table)
+4. [Basic Commands](#basic-commands)
 
 # <a name="introduction"></a>Introduction
 
@@ -97,3 +98,63 @@
     weight integer NOT NULL
   );
   ```
+  
+  
+  
+  # <a name="basic-commands"></a>Basic Commands
+
+
+* To quit the psql::
+  ```
+  \q
+  ```
+  
+* List all databases in the PostgreSQL database server
+  ```
+  \l
+  ```
+  
+* List all schemas:
+
+```
+\dn
+```
+
+* List all stored procedures and functions:
+
+```
+\df
+```
+
+* List all views:
+
+```
+\dv
+```
+
+* Lists all tables in a current database.
+
+```
+\dt
+```
+
+Or to get more information on tables in the current database:
+```
+\dt+
+```
+
+Get detailed information on a table.
+
+```
+\d+ table_name
+```
+
+* Show a stored procedure or function code:
+```
+\df+ function_name
+```
+
+Show query output in the pretty-format:
+```
+\x
+```
